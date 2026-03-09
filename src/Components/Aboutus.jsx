@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import AboutUs from '../assets/AboutUs.png'
-import "../styles/AboutUs.css"
+import "../styles/Aboutus.css"
 
 function Aboutus() {
   const containerVariants = {
