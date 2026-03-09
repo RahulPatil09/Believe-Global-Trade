@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=TASA+Orbiter:wght@400..800&display=swap');
+
+/* Global Font Standardization */
+* {
+  font-family: "TASA Orbiter", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "TASA Orbiter", sans-serif;
+  line-height: 1.6;
+  color: #2c3e50;
+}
+
+/* Ensure all elements inherit the global font */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "TASA Orbiter", sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+p, span, div, section, article, nav, header, footer, main, aside {
+  font-family: "TASA Orbiter", sans-serif;
+}
+
+button, input, textarea, select, label {
+  font-family: "TASA Orbiter", sans-serif;
+}
+
+a, link {
+  font-family: "TASA Orbiter", sans-serif;
+}
+
+/* Font weight hierarchy */
+h1 { font-weight: 700; }
+h2 { font-weight: 600; }
+h3 { font-weight: 600; }
+h4 { font-weight: 600; }
+h5 { font-weight: 500; }
+h6 { font-weight: 500; }
+
+p { font-weight: 400; }
+span { font-weight: 400; }
+
+button { font-weight: 600; }
+input, textarea, select { font-weight: 400; }
+label { font-weight: 500; }
+
+/* Smooth font rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}

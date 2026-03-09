@@ -1,0 +1,161 @@
+/* CSS Variables for Professional Theme */
+:root {
+  --primary-blue: #0B3D91;
+  --secondary-blue: #1a5fb4;
+  --accent-gold: #D4AF37;
+  --text-dark: #2c3e50;
+  --text-gray: #6c757d;
+  --bg-light: #f8f9fa;
+  --white: #ffffff;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.2);
+  --border-radius: 16px;
+  --transition: all 0.3s ease;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.processPage {
+  padding: 100px 20px 80px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+  position: relative;
+}
+.processPage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+  opacity: 0.3;
+}
+/* Header */
+.processHeader {
+  text-align: center;
+  margin-bottom: 100px;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.processHeader h1 {
+  font-size: clamp(2.5rem, 3.5rem, 4rem);
+  color: var(--primary-blue);
+  margin-bottom: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+  position: relative;
+  padding-bottom: 20px;
+}
+.processHeader h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-gold) 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(11, 61, 145, 0.2);
+}
+.processHeader p {
+  font-size: clamp(1.2rem, 1.4rem, 1.6rem);
+  color: var(--text-gray);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+/* Container */
+.processContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  position: relative;
+}
+/* Vertical line */
+.processContainer::before {
+  content: "";
+  position: absolute;
+  left: 40px;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: #2b6cff;
+}
+/* Step */
+.processStep {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  position: relative;
+}
+.processNumber {
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #2b6cff, #1e4fd6);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  box-shadow: 0 8px 20px rgba(43, 108, 255, 0.3);
+  transition: 0.3s ease;
+}
+.processStep:hover .processNumber {
+  transform: scale(1.1);
+}
+/* Content */
+.processContent {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  transition: 0.3s ease;
+}
+.processContent h2 {
+  font-size: 20px;
+  color: #1c2b4a;
+  margin-bottom: 10px;
+}
+.processContent p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.6;
+}
+.processStep:hover .processContent {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .processContainer::before {
+    left: 20px;
+  }
+  .processStep {
+    gap: 20px;
+  }
+  .processNumber {
+    width: 60px;
+    height: 60px;
+    font-size: 18px;
+  }
+  .processContent {
+    padding: 20px;
+  }
+  .processHeader h1 {
+    font-size: 30px;
+  }
+  .processHeader p {
+    font-size: 15px;
+  }
+}

@@ -1,0 +1,287 @@
+/* CSS Variables for Professional Theme */
+:root {
+  --primary-blue: #0B3D91;
+  --secondary-blue: #1a5fb4;
+  --accent-gold: #D4AF37;
+  --text-dark: #2c3e50;
+  --text-gray: #6c757d;
+  --bg-light: #f8f9fa;
+  --white: #ffffff;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.2);
+  --border-radius: 16px;
+  --transition: all 0.3s ease;
+}
+.AboutUsMainDiv {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.AboutUsMainDiv::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+    opacity: 0.3;
+}
+.PrimaryDiv {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+.SecondaryDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+    background: var(--white);
+    padding: 80px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(11, 61, 145, 0.05);
+}
+.SecondaryDiv::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-blue) 0%, var(--accent-gold) 100%);
+    border-radius: 2px 0 0 2px;
+}
+.SecondaryDiv::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(11, 61, 145, 0.02) 0%, transparent 70%);
+    pointer-events: none;
+}
+.AboutUsimgdiv {
+    flex: 0 0 45%;
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-md);
+    background: var(--bg-light);
+    transition: var(--transition);
+}
+.AboutUsimgdiv::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(11, 61, 145, 0.1) 0%, rgba(212, 175, 55, 0.05) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+.AboutUsimgdiv:hover::before {
+    opacity: 1;
+}
+.AboutUsimg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    display: block;
+    min-height: 400px;
+}
+.AboutUsimgdiv:hover .AboutUsimg {
+    transform: scale(1.05);
+}
+.TernaryDiv {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding: 10px 0;
+    position: relative;
+    z-index: 2;
+}
+.AboutUSText {
+    font-size: clamp(2rem, 3rem, 3.5rem);
+    color: var(--primary-blue);
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+    padding-bottom: 20px;
+    line-height: 1.2;
+}
+.AboutUSText::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-gold) 100%);
+    border-radius: 2px;
+    box-shadow: 0 2px 8px rgba(11, 61, 145, 0.2);
+}
+.DescriptionAboutUS {
+    font-size: clamp(1rem, 1.1rem, 1.2rem);
+    line-height: 1.8;
+    color: var(--text-gray);
+    text-align: justify;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    max-width: 600px;
+}
+.ReadMore {
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+    color: var(--white);
+    border: none;
+    padding: 16px 40px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: var(--shadow-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    position: relative;
+    overflow: hidden;
+    align-self: flex-start;
+}
+.ReadMore::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+.ReadMore:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    background: linear-gradient(135deg, var(--secondary-blue) 0%, var(--primary-blue) 100%);
+}
+.ReadMore:hover::before {
+    left: 100%;
+}
+.ReadMore:active {
+    transform: translateY(-1px);
+}
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .AboutUsMainDiv {
+        padding: 80px 15px;
+    }
+    .SecondaryDiv {
+        gap: 60px;
+        padding: 60px;
+    }
+    .AboutUSText {
+        font-size: clamp(1.8rem, 2.5rem, 3rem);
+    }
+    .DescriptionAboutUS {
+        font-size: clamp(0.95rem, 1rem, 1.1rem);
+    }
+}
+@media (max-width: 1024px) {
+    .SecondaryDiv {
+        gap: 50px;
+        padding: 50px;
+    }
+    .AboutUSText {
+        font-size: clamp(1.6rem, 2.2rem, 2.8rem);
+    }
+    .DescriptionAboutUS {
+        font-size: clamp(0.9rem, 0.95rem, 1rem);
+    }
+    .AboutUsimg {
+        min-height: 350px;
+    }
+}
+@media (max-width: 768px) {
+    .AboutUsMainDiv {
+        padding: 60px 15px;
+    }
+    .SecondaryDiv {
+        flex-direction: column;
+        gap: 50px;
+        padding: 40px 30px;
+    }
+    .AboutUsimgdiv {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 450px;
+        height: 300px;
+        margin: 0 auto;
+    }
+    .AboutUsimg {
+        min-height: 300px;
+    }
+    .TernaryDiv {
+        text-align: center;
+        align-items: center;
+        gap: 30px;
+    }
+    .AboutUSText {
+        font-size: clamp(1.5rem, 2rem, 2.5rem);
+        text-align: center;
+    }
+    .AboutUSText::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .DescriptionAboutUS {
+        text-align: center;
+        font-size: clamp(0.85rem, 0.9rem, 0.95rem);
+        max-width: 100%;
+    }
+    .ReadMore {
+        align-self: center;
+        padding: 14px 36px;
+        font-size: 15px;
+    }
+}
+@media (max-width: 480px) {
+    .AboutUsMainDiv {
+        padding: 40px 10px;
+    }
+    .SecondaryDiv {
+        padding: 30px 20px;
+        gap: 40px;
+    }
+    .AboutUsimgdiv {
+        height: 250px;
+        max-width: 100%;
+    }
+    .AboutUsimg {
+        min-height: 250px;
+    }
+    .AboutUSText {
+        font-size: clamp(1.3rem, 1.8rem, 2.2rem);
+    }
+    .DescriptionAboutUS {
+        font-size: clamp(0.8rem, 0.85rem, 0.9rem);
+        line-height: 1.6;
+    }
+    .ReadMore {
+        padding: 12px 32px;
+        font-size: 14px;
+    }
+}

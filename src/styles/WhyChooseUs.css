@@ -1,0 +1,316 @@
+/* CSS Variables for Professional Theme */
+:root {
+  --primary-blue: #0B3D91;
+  --secondary-blue: #1a5fb4;
+  --accent-gold: #D4AF37;
+  --text-dark: #2c3e50;
+  --text-gray: #6c757d;
+  --bg-light: #f8f9fa;
+  --white: #ffffff;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.2);
+  --border-radius: 16px;
+  --transition: all 0.3s ease;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.whyPage {
+  padding: 100px 20px 80px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  min-height: 100vh;
+  position: relative;
+}
+.whyPage::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--primary-blue), transparent);
+  opacity: 0.3;
+}
+.whyHeader {
+  text-align: center;
+  margin-bottom: 120px;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.whyHeader h1 {
+  font-size: clamp(2.5rem, 3.5rem, 4rem);
+  color: var(--primary-blue);
+  margin-bottom: 25px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.whyHeader p {
+  font-size: clamp(1.2rem, 1.4rem, 1.6rem);
+  color: var(--text-gray);
+  font-weight: 400;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto 40px;
+}
+.headerAccent {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-gold) 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(11, 61, 145, 0.2);
+}
+.whyContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+  gap: 60px;
+  position: relative;
+}
+.whySection {
+  background: var(--white);
+  border-radius: var(--border-radius);
+  padding: 50px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(11, 61, 145, 0.05);
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.whySection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--primary-blue) 0%, var(--accent-gold) 100%);
+  border-radius: 3px 0 0 3px;
+}
+.whySection::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(11, 61, 145, 0.02) 0%, transparent 70%);
+  pointer-events: none;
+}
+.whySection.leftAligned {
+  flex-direction: row;
+}
+.whySection.rightAligned {
+  flex-direction: row-reverse;
+}
+.whySection:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-lg);
+}
+.reasonNumber {
+  flex: 0 0 auto;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+.reasonNumber::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.whySection:hover .reasonNumber::before {
+  opacity: 1;
+}
+.reasonNumber span {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1;
+}
+.reasonContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.reasonContent h2 {
+  font-size: clamp(1.6rem, 2rem, 2.3rem);
+  color: var(--primary-blue);
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 5px;
+}
+.contentDivider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-blue) 0%, var(--accent-gold) 100%);
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(11, 61, 145, 0.2);
+}
+.reasonContent p {
+  font-size: clamp(1rem, 1.1rem, 1.2rem);
+  color: var(--text-gray);
+  line-height: 1.7;
+  font-weight: 400;
+  text-align: left;
+}
+.sectionAccent {
+  display: none;
+}
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .whyPage {
+    padding: 80px 15px 60px;
+  }
+  .whyHeader {
+    margin-bottom: 100px;
+  }
+  .whyContainer {
+    gap: 50px;
+  }
+  .whySection {
+    padding: 40px;
+    gap: 35px;
+  }
+  .reasonNumber {
+    width: 70px;
+    height: 70px;
+  }
+  .reasonNumber span {
+    font-size: 1.6rem;
+  }
+  .reasonContent h2 {
+    font-size: clamp(1.5rem, 1.8rem, 2.1rem);
+  }
+  .reasonContent p {
+    font-size: clamp(0.95rem, 1.05rem, 1.1rem);
+  }
+}
+@media (max-width: 1024px) {
+  .whyContainer {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .whySection {
+    padding: 35px;
+    gap: 30px;
+  }
+  .reasonNumber {
+    width: 65px;
+    height: 65px;
+  }
+  .reasonNumber span {
+    font-size: 1.5rem;
+  }
+  .reasonContent h2 {
+    font-size: clamp(1.4rem, 1.7rem, 2rem);
+  }
+  .reasonContent p {
+    font-size: clamp(0.9rem, 1rem, 1.05rem);
+  }
+}
+@media (max-width: 768px) {
+  .whyPage {
+    padding: 60px 15px 50px;
+  }
+  .whyHeader {
+    margin-bottom: 80px;
+  }
+  .whyHeader h1 {
+    font-size: clamp(2rem, 2.5rem, 3rem);
+  }
+  .whyHeader p {
+    font-size: clamp(1rem, 1.2rem, 1.3rem);
+  }
+  .whyContainer {
+    gap: 30px;
+  }
+  .whySection {
+    flex-direction: column !important;
+    padding: 30px;
+    gap: 25px;
+    text-align: center;
+  }
+  .reasonNumber {
+    width: 60px;
+    height: 60px;
+  }
+  .reasonNumber span {
+    font-size: 1.4rem;
+  }
+  .reasonContent {
+    text-align: center;
+    align-items: center;
+  }
+  .reasonContent h2 {
+    font-size: clamp(1.3rem, 1.6rem, 1.8rem);
+    text-align: center;
+  }
+  .contentDivider {
+    align-self: center;
+  }
+  .reasonContent p {
+    text-align: center;
+    font-size: clamp(0.85rem, 0.95rem, 1rem);
+  }
+}
+@media (max-width: 480px) {
+  .whyPage {
+    padding: 50px 10px 40px;
+  }
+  .whyHeader {
+    margin-bottom: 60px;
+  }
+  .whyHeader h1 {
+    font-size: clamp(1.8rem, 2.2rem, 2.6rem);
+  }
+  .whyHeader p {
+    font-size: clamp(0.9rem, 1rem, 1.1rem);
+  }
+  .whyContainer {
+    gap: 25px;
+  }
+  .whySection {
+    padding: 25px;
+    gap: 20px;
+  }
+  .reasonNumber {
+    width: 55px;
+    height: 55px;
+  }
+  .reasonNumber span {
+    font-size: 1.3rem;
+  }
+  .reasonContent h2 {
+    font-size: clamp(1.2rem, 1.5rem, 1.6rem);
+  }
+  .reasonContent p {
+    font-size: clamp(0.8rem, 0.9rem, 0.95rem);
+    line-height: 1.6;
+  }
+}

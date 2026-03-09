@@ -1,0 +1,528 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Manrope:wght@200..800&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&family=TASA+Orbiter:wght@400..800&display=swap');
+
+/* CSS Variables */
+:root {
+  --primary-blue: #2b6cff;
+  --primary-dark: #1e4fd6;
+  --text-dark: #2c3e50;
+  --text-light: #6c757d;
+  --white: #ffffff;
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,0.2);
+  --transition: all 0.3s ease;
+}
+
+/* Base Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--white);
+  box-shadow: var(--shadow-sm);
+  z-index: 1000;
+  transition: var(--transition);
+}
+
+.navbar.scrolled {
+  box-shadow: var(--shadow-md);
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+/* Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.logo img {
+  height: 50px;
+  width: auto;
+  display: block;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-links > div {
+  position: relative;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-dark);
+  font-family: "TASA Orbiter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  transition: var(--transition);
+  position: relative;
+  padding-bottom: 5px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--primary-dark));
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:hover {
+  color: var(--primary-blue);
+}
+
+/* Services Link with Mega Menu */
+.Services.services-link {
+  position: relative;
+}
+
+.Services.services-link > a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.Services.services-link > a::after {
+  content: '▼';
+  font-size: 10px;
+  transition: transform 0.3s ease;
+}
+
+.Services.services-link:hover > a::after {
+  transform: rotate(180deg);
+}
+
+/* Mega Menu */
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: var(--shadow-lg);
+  padding: 30px;
+  min-width: 600px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) 200px;
+  gap: 30px;
+  margin-top: 20px;
+  border: 1px solid rgba(43, 108, 255, 0.1);
+}
+
+.mega-menu::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid var(--white);
+}
+
+.menu-column h4 {
+  color: var(--text-dark);
+  font-family: "TASA Orbiter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.menu-column a {
+  display: block;
+  color: var(--text-light);
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 14px;
+  padding: 8px 0;
+  text-decoration: none;
+  transition: var(--transition);
+  border-radius: 6px;
+  padding-left: 10px;
+  margin-left: -10px;
+}
+
+.menu-column a:hover {
+  color: var(--primary-blue);
+  background: rgba(43, 108, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.menu-card {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+  color: var(--white);
+  padding: 25px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.menu-card h3 {
+  font-family: "TASA Orbiter", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.menu-card-btn {
+  background: var(--white);
+  color: var(--primary-blue);
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 25px;
+  font-family: "TASA Orbiter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  transition: var(--transition);
+  display: block;
+}
+
+.menu-card-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: var(--white);
+}
+
+/* Quote Button */
+.quote-btn {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+  color: var(--white);
+  border: none;
+  padding: 12px 25px;
+  border-radius: 25px;
+  font-family: "TASA Orbiter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.quote-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: linear-gradient(135deg, var(--primary-dark), var(--primary-blue));
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-dark);
+  cursor: pointer;
+  transition: var(--transition);
+  padding: 5px;
+}
+
+.mobile-toggle:hover {
+  color: var(--primary-blue);
+  transform: scale(1.1);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: var(--white);
+  box-shadow: var(--shadow-lg);
+  z-index: 999;
+  padding: 80px 30px 30px;
+}
+
+.mobile-menu-content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mobile-menu-content > div {
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.mobile-menu-content a {
+  color: var(--text-dark);
+  font-family: "TASA Orbiter", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: none;
+  transition: var(--transition);
+  display: block;
+}
+
+.mobile-menu-content a:hover {
+  color: var(--primary-blue);
+  transform: translateX(5px);
+}
+
+.mobile-quote-btn {
+  background: linear-gradient(135deg, var(--primary-blue), var(--primary-dark));
+  color: var(--white);
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.mobile-quote-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .nav-container {
+    padding: 0 15px;
+  }
+  
+  .nav-links {
+    gap: 30px;
+  }
+  
+  .mega-menu {
+    min-width: 500px;
+    padding: 20px;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    height: 70px;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .desktop-nav {
+    display: none;
+  }
+  
+  .mobile-toggle {
+    display: block;
+  }
+  
+  .quote-btn {
+    display: none;
+  }
+  
+  .mobile-menu-overlay {
+    width: 280px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 10px;
+  }
+  
+  .mobile-menu-overlay {
+    width: 100%;
+    right: 0;
+  }
+  
+  .logo img {
+    height: 35px;
+  }
+}
+
+/* Animation Classes */
+.nav-links > div {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.nav-links > div:nth-child(1) { animation-delay: 0.1s; }
+.nav-links > div:nth-child(2) { animation-delay: 0.2s; }
+.nav-links > div:nth-child(3) { animation-delay: 0.3s; }
+.nav-links > div:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(max-width:414px) {
+
+  .navbar{
+    width: auto;
+  }
+  .logo{
+    max-width: 100%;
+    margin-left: -20%;
+  }
+
+ .nav-links-div{
+  display: flex;
+  flex-direction: row;
+  font-size: 10px;
+  justify-content: center;
+  margin-left: 260px;
+  gap: 5%;
+ }
+
+ .quote-btn{
+  width: 55px;
+  height: 25px;
+  font-size: 7px;
+  margin-right: 40px;
+ }
+
+}
+
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px 60px;
+  background: white;
+  position: relative;
+  z-index: 1000000;
+  max-height: 50px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: -1%;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  max-width: 30%;
+  max-height: 20%;
+  margin-left: -20px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-left: -450px;
+  font-family: "TASA Orbiter", sans-serif;;
+}
+
+
+.About:hover{
+  color: #2b6cff;
+}
+
+.Products:hover{
+  color: #2b6cff;
+}
+
+.Support:hover{
+  color: #2b6cff;
+}
+
+.nav-links li {
+  cursor: pointer;
+  position: relative;
+}
+
+.quote-btn {
+  background: #2b6cff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: "TASA Orbiter", sans-serif;
+}
+
+/* Mega Menu */
+
+.mega-menu {
+  position: absolute;
+  top: 50px;
+  left: -200px;
+  width: 900px;
+  background: #f5f5f5;
+  padding: 30px;
+  display: flex;
+  gap: 40px;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-column h4 {
+  margin-bottom: 10px;
+}
+
+.menu-column p {
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.menu-card {
+  background: black;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 220px;
+}
+
+.menu-card button {
+  margin-top: 20px;
+  padding: 8px 12px;
+  border: none;
+  background: white;
+  cursor: pointer;
+}
