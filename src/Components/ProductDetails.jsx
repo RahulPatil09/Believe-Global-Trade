@@ -1,6 +1,6 @@
 import React from "react";
 import "../styles/ProductDetails.css";
-import product1 from "../assets/product1.png";
+import product1 from "../assets/Product1.png";
 
 function ProductDetails() {
   return (

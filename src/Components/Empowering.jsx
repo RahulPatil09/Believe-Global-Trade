@@ -1,7 +1,7 @@
 import React from 'react'
 import "../styles/Empowering.css"
 import container from "../assets/container.jpg"
-import container2 from "../assets/container2.jpg"
+import container2 from "../assets/Container2.jpg"
 import employe from "../assets/employe.jpg"
 function Empowering() {
     return (
