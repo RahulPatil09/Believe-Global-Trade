@@ -4,7 +4,6 @@ import { FcGlobe } from "react-icons/fc";
 import { FcAddressBook } from "react-icons/fc";
 import { FcCamera } from "react-icons/fc";
 import { FcBriefcase } from "react-icons/fc";
-import { Link } from "react-router-dom";
 
 function Footer() {
   return (
@@ -20,10 +19,10 @@ function Footer() {
             from India to global markets with trust, quality, and reliability.
           </p>
           <div className="socialIcons">
-            <Link to="#"><FcGlobe /></Link>
-            <Link to="#"><FcAddressBook /></Link>
-            <Link to="#"><FcCamera /></Link>
-            <Link to="#"><FcBriefcase /></Link>
+            <a href="#"><FcGlobe /></a>
+            <a href="#"><FcAddressBook /></a>
+            <a href="#"><FcCamera /></a>
+            <a href="#"><FcBriefcase /></a>
           </div>
         </div>
 
@@ -31,11 +30,11 @@ function Footer() {
         <div className="footerSection">
           <h3>Quick Links</h3>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/why-choose-us">Why Choose Us</Link></li>
-            <li><Link to="/contact-us">Contact</Link></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/why-choose-us">Why Choose Us</a></li>
+            <li><a href="/contact-us">Contact</a></li>
           </ul> 
         </div>
 
